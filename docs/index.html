@@ -17,8 +17,11 @@
   </head>
   <body>
     <main>
-        <button type=button onClick="window.open('','_self').close();">閉じる</button>
-      <a href="#close">閉じる</a>
+    <script src="https://cdn.stg.tigmedia.jp/v3/latest/js/tig.js"></script>
+      <div class="tigvideo-wrapper">
+        <video id="player1" data-tig-id="35e43d467e96d777a3bd"></video>
+          <script>tigvideo("player1").tig({"tig-autoplay": "true"});</script>
+      </div>
     </main>
   </body>
 </html>
