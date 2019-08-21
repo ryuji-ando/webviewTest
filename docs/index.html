@@ -80,7 +80,16 @@ address {
 </style>
 <script type='text/javascript' src="js/jquery-3.4.1.min.js"></script>
 <script>
-    $(window).on('message', function (e) {
+$(function(){
+    $('#btnChild').on('click', function(){
+			// alert('子どもです。');
+			window.parent.postMessage('hello!','*');
+      // parent.showButton();
+			// parent.tshowButton();
+    });
+});
+
+$(window).on('message', function (e) {
       alert('メッセージ取得しました！');
 
       // ion-fabボタンを表示させる場合
