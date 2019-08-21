@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
@@ -82,11 +83,18 @@ address {
 <script>
 $(function(){
     $('#btnChild').on('click', function(){
-	// alert('子どもです。');
-	window.parent.postMessage('hello!','*');
+			// alert('子どもです。');
+			window.parent.postMessage('s','*');
+      // parent.showButton();
+			// parent.tshowButton();
+    });
+		$('#btnChild2').on('click', function(){
+			// alert('子どもです。');
+			window.parent.postMessage('b','*');
+      // parent.showButton();
+			// parent.tshowButton();
     });
 });
-
 </script>
 </head>
 <body>
