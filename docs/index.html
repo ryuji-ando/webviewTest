@@ -88,12 +88,6 @@ $(function(){
       // parent.showButton();
 			// parent.tshowButton();
     });
-		$('#btnChild2').on('click', function(){
-			// alert('子どもです。');
-			window.parent.postMessage('b','*');
-      // parent.showButton();
-			// parent.tshowButton();
-    });
 });
     $(window).on('message', function (e) {
       alert('メッセージ取得しました！');
@@ -104,7 +98,6 @@ $(function(){
       // 直接戻る場合
       // window.location.href = '/app-button';
     });
-
 </script>
 </head>
 <body>
