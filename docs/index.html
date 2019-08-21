@@ -1,27 +1,125 @@
-<html amp lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>login</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-custom>
-        *{padding:0;margin:0;box-sizing:border-box}main{padding:16px}fieldset{padding:0;border:0;margin:0 0 16px}.btn-submit,.input-text>input{display:block;border:1px solid #999}.input-text{margin:0 0 8px;display:block}.input-text>span{display:block;margin:0 0 4px}.input-text>input{width:100%;height:32px;padding:4px}.btn-submit{width:120px;background:#fff;font-size:16px;min-height:32px;margin:24px 0 18px}.result{color:green}
-    </style>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="./js/a.js"></script>
-    <script src="./js/sha256.js"></script>
-    <script src="./js/val.js"></script>
-  </head>
-  <body>
-    <main>
-    <script src="https://cdn.stg.tigmedia.jp/v3/latest/js/tig.js"></script>
-      <div class="tigvideo-wrapper">
-        <video id="player1" data-tig-id="35e43d467e96d777a3bd"></video>
-          <script>tigvideo("player1").tig({"tig-autoplay": "true"});</script>
-      </div>
-    </main>
-  </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="copyright" content="Copyright XSERVER Inc." />
+<meta name="robots" content="INDEX,FOLLOW" />
+<title>テストページ</title>
+<style type="text/css">
+
+* {
+	margin : 0 ;
+	padding : 0 ;
+	font-size : 100% ;
+}
+
+body {
+	font-size : 75% ;
+	/*text-align : center ;*/
+	font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3" ;
+	line-height : 1.4 ;
+	background: #42cbf5;
+}
+
+#container {
+	/*width : 540px ;
+	margin : 15px auto 30px ;*/
+}
+
+#container #header {
+	width : 540px ;
+	height : 52px ;
+	/*background : url(default_page.png) 0 0 no-repeat ;*/
+}
+
+#container #header a {
+	display : block ;
+	text-indent : -500em ;
+	overflow : hidden ;
+	width : 292px ;
+	height : 40px ;
+	margin : 0 auto ;
+}
+
+#container dl#contents {
+	height : 108px ;
+	margin-bottom : 8px ;
+	/*background : url(default_page.png) left bottom no-repeat ;*/
+}
+
+dl#contents dt {
+	width : 540px ;
+	/*text-align : center ;*/
+	line-height : 30px ;
+	height : 30px ;
+	font-weight : bold ;
+	font-size : 115% ;
+}
+
+dl#contents dd {
+	text-align : left ;
+	padding : 8px 12px ;
+	position : relative ;
+}
+
+dl#contents dd #message {
+	position : absolute ;
+	top : 50px ;
+	left : 30px ;
+}
+
+address {
+	font-style : normal ;
+}
+</style>
+<script type='text/javascript' src="js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+    $('#btnChild').on('click', function(){
+			// alert('子どもです。');
+			window.parent.postMessage('s','*');
+      // parent.showButton();
+			// parent.tshowButton();
+    });
+		$('#btnChild2').on('click', function(){
+			// alert('子どもです。');
+			window.parent.postMessage('b','*');
+      // parent.showButton();
+			// parent.tshowButton();
+    });
+});
+</script>
+</head>
+<body>
+
+<div>
+	<div>
+
+		<div id="child">
+			<br />
+			<br />
+			<br />
+			<br />
+        	<p>これはiframeのテストページです。</p><br /><br /><br /><br />
+					<!--<button id="target" (click)="">戻る</button>-->
+					<!--<input value="前のページに戻る" onclick="history.back();" type="button">-->
+					<button id="btnChild">ボタン表示</button><br /><br />
+					<!--<button id="btnChild2">戻るボタン</button><br /><br /><br /><br />-->
+					<!--<input value="ボタンを表示するためのボタン2" onclick="parent.showButton();" type="button">-->
+		</div>
+
+        <div>
+					<p>iframeテストページ</p>
+        </div>
+
+	<!--//container--></div>
+<!--//base--></div>
+
+</body>
 </html>
