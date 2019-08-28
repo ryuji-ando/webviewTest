@@ -91,7 +91,7 @@ address {
     });
 	
     $(window).on('message', function (e) {
-      alert('メッセージ取得しました！');
+	    e.source.postMessage('WORLD!', event.origin);
     });
 </script>
 </head>
