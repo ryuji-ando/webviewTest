@@ -104,6 +104,10 @@ address {
         window.parent.postMessage(message,'*');
       });
     });
+
+		window.addEventListener('message', function(event) {
+    	alert(event.data);
+		}, false);
 </script>
 </head>
 <body>
