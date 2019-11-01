@@ -104,7 +104,16 @@ address {
         window.parent.postMessage(message,'*');
       });
     });
-
+    $(function(){
+      $('#btnMovie').on('click', function(){
+				var message = {
+					"msg_id": "TOUCHMOVIE_START",
+					"request_id": "20191015123045333",
+					"list":[{cid:"cid2",lid:"lid2"},{cid:"cid2",lid:"lid2"}]
+				}
+        window.parent.postMessage(message,'*');
+      });
+    });
 		window.addEventListener('message', function(event) {
     	alert(JSON.stringify(event.data));
 		}, false);
@@ -122,6 +131,7 @@ address {
     	<p>これはiframeのテストページです。</p><br /><br /><br /><br />
 		<button id="btnChild">タッチムービーレジューム取得応答</button><br /><br />
 		<button id="btnStart">タッチムービー視聴開始通知</button><br /><br />
+		<button id="btnMovie">動画OneTimeURL取得通知</button><br /><br />
 		</div>
         <div>
 		<p>iframeテストページ</p>
