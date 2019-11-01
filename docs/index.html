@@ -83,16 +83,9 @@ address {
 <script>
     $(function(){
       $('#btnChild').on('click', function(){
-        //alert('子どもです。');
+				alert("On Click");
         window.parent.postMessage('s','*');
-        // parent.showButton();
-        // parent.tshowButton();
       });
-    });
-	
-    $(window).on('message', function (e) {
-	window.parent.postMessage('s','*');    
-	// e.source.postMessage('WORLD!', e.origin);
     });
 </script>
 </head>
@@ -105,7 +98,7 @@ address {
 			<br />
 			<br />
 			<br />
-        	<p>これはiframeのテストページです。</p><br /><br /><br /><br />
+    	<p>これはiframeのテストページです。</p><br /><br /><br /><br />
 		<button id="btnChild">ボタン表示</button><br /><br />
 		</div>
         <div>
