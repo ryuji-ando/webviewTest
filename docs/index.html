@@ -128,20 +128,20 @@ address {
     $(function(){
       $('#btnWindow').on('click', function(){
 				var message = {
-					"msg_id": "TOUCHMOVIE_CLOSE",
+					"msg_id": "TOUCHMOVIE_BROWSER_OPEN",
 					"request_id": "20191015123045333",
-					"crid": "1111",
-					"lid": "2222"
+					"url": "https://www.yahoo.co.jp/"
 				}
         window.parent.postMessage(message,'*');
       });
 	});
 	$(function(){
-      $('#btnClose').on('click', function(){
+      $('#btnclose').on('click', function(){
 				var message = {
-					"msg_id": "TOUCHMOVIE_BROWSER_OPEN",
+					"msg_id": "TOUCHMOVIE_CLOSE",
 					"request_id": "20191015123045333",
-					"url": "https://www.yahoo.co.jp/",
+					"crid": "1111",
+					"lid": "2222"
 				}
         window.parent.postMessage(message,'*');
       });
@@ -166,7 +166,7 @@ address {
 		<button id="btnMovie">動画OneTimeURL取得通知</button><br /><br />
 		<button id="btnUpdate">タッチムービーレジューム更新通知</button><br /><br />
 		<button id="btnWindow">ウインドウオープン</button><br /><br />
-		<button id="btnClose">タッチムービークローズ通知</button><br /><br />
+		<button id="btnclose">タッチムービークローズ通知</button><br /><br />
 
 		</div>
         <div>
