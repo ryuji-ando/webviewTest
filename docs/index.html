@@ -124,7 +124,17 @@ address {
 				}
         window.parent.postMessage(message,'*');
       });
-    });
+	});
+    $(function(){
+      $('#btnWindow').on('click', function(){
+				var message = {
+					"msg_id": "TOUCHMOVIE_BROWSER_OPEN",
+					"request_id": "20191015123045333",
+					"url": "https://www.yahoo.co.jp/",
+				}
+        window.parent.postMessage(message,'*');
+      });
+	});
 		window.addEventListener('message', function(event) {
     	alert(JSON.stringify(event.data));
 		}, false);
@@ -144,6 +154,8 @@ address {
 		<button id="btnStart">タッチムービー視聴開始通知</button><br /><br />
 		<button id="btnMovie">動画OneTimeURL取得通知</button><br /><br />
 		<button id="btnUpdate">タッチムービーレジューム更新通知</button><br /><br />
+		<button id="btnWindow">ウインドウオープン</button><br /><br />
+
 		</div>
         <div>
 		<p>iframeテストページ</p>
