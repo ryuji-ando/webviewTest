@@ -120,7 +120,12 @@ address {
 					"msg_id": "TOUCHMOVIE_RESUME_UPDATE",
 					"request_id": "20191015123045333",
 					"crid": "111111",
-					"resume":[{key1:"value"},{key2:"value2"}]
+					"resume":{
+  "contentType": "tig",
+  "data": {
+    "any": {}
+  }
+}
 				}
         window.parent.postMessage(message,'*');
       });
