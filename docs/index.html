@@ -83,11 +83,11 @@ address {
 <script>
     $(function(){
       $('#btnChild').on('click', function(){
-				var message = {
+				var message = JSON.stringify({
 						"msg_id": "TOUCHMOVIE_RESUME_GET",
 						"request_id": "20191015123045333",
 						"crid":"1"
-				}
+				});
         window.parent.postMessage(message,'*');
       });
     });
