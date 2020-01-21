@@ -93,61 +93,61 @@ address {
     });
     $(function(){
       $('#btnStart').on('click', function(){
-				var message = {
+				var message = JSON.stringify({
 					"msg_id": "TOUCHMOVIE_START",
 					"request_id": "20191015123045333",
 					"cid":"cid1",
 					"lid":"lid1",
 					"onetimeurl":"https://xxxxxxxxx",
 					"end_option":{cid:"cid2",lid:"lid2"}
-				}
+				});
         window.parent.postMessage(message,'*');
       });
     });
     $(function(){
       $('#btnMovie').on('click', function(){
-				var message = {
+				var message = JSON.stringify({
 					"msg_id": "MOVIE_ONETIMEURL_GET",
 					"request_id": "20191015123045333",
 					"list":[{cid:"cid1",lid:"lid1"},{cid:"cid2",lid:"lid2"}]
-				}
+				});
         window.parent.postMessage(message,'*');
       });
     });
     $(function(){
       $('#btnUpdate').on('click', function(){
-				var message = {
+				var message = JSON.stringify({
 					"msg_id": "TOUCHMOVIE_RESUME_UPDATE",
 					"request_id": "20191015123045333",
 					"crid": "111111",
 					"resume":{
-  "contentType": "tig",
-  "data": {
-    "any": {}
-  }
-}
-				}
+                                            "contentType": "tig",
+                                            "data": {
+                                                "any": {}
+                                            }
+                                        }
+				});
         window.parent.postMessage(message,'*');
       });
 	});
     $(function(){
       $('#btnWindow').on('click', function(){
-				var message = {
+				var message = JSON.stringify({
 					"msg_id": "TOUCHMOVIE_BROWSER_OPEN",
 					"request_id": "20191015123045333",
 					"url": "https://www.yahoo.co.jp/"
-				}
+				});
         window.parent.postMessage(message,'*');
       });
 	});
 	$(function(){
       $('#btnclose').on('click', function(){
-				var message = {
+				var message = JSON.stringify({
 					"msg_id": "TOUCHMOVIE_CLOSE",
 					"request_id": "20191015123045333",
 					"crid": "1111",
 					"lid": "2222"
-				}
+				});
         window.parent.postMessage(message,'*');
       });
 	});
