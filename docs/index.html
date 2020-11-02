@@ -154,6 +154,23 @@ address {
 		window.addEventListener('message', function(event) {
     	alert(JSON.stringify(event.data));
 		}, false);
+	
+	// バックグランドに行った時
+	
+	
+document.addEventListener('deviceready', () => {
+      // アプリがバックグラウンドにいった時にハンドリングするリスナーを登録
+      if (pauseHandler === false) {
+        this.pauseEventListner = (e:Event) => {
+ 				var message = JSON.stringify({
+					"msg_id": "TOUCHMOVIE_BROWSER_OPEN",
+					"request_id": "20191015123045333",
+					"url": "https://www.yahoo.co.jp/"
+				});
+        };
+        document.addEventListener('pause', this.pauseEventListner, false);
+      }
+    });
 </script>
 </head>
 <body>
